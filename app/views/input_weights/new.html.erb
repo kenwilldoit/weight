@@ -1,0 +1,16 @@
+<%= form_with url: comparison_judge_path, method: :post, local: true, data: { turbo: false } do |f| %>
+  <div>
+    <label>1日目：</label>
+    <%= text_field_tag :day1 %> kg
+  </div>
+  <div>
+    <label>2日目：</label>
+    <%= text_field_tag :day2 %> kg
+  </div>
+
+  <%= f.submit "比較" %>
+  <div>
+    <%= link_to "ホーム", root_path%>
+  </div>
+  
+<% end %>
