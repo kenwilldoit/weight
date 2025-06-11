@@ -1,0 +1,5 @@
+<h1><%= @result %></h1>
+
+<%# 画像の表示 %>
+<%= image_tag @image, width: 300, height:300 if @image.present? %>
+<%= link_to "入力画面に戻る", new_input_weight_path %>
