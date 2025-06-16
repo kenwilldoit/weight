@@ -1,5 +1,29 @@
-<h1><%= @result %></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class= "center">
+  <h1><%= @result %></h1>
 
-<%# 画像の表示 %>
-<%= image_tag @image, width: 300, height:300 if @image.present? %>
-<%= link_to "入力画面に戻る", new_input_weight_path %>
+  <h2> 
+    <% if @difference %>
+    <p style="color: red;">変化量：<%= @difference %> kg</p>
+    <% end %>
+  </h2>
+
+  <%# 画像の表示 %>
+  <%= image_tag @image, width: 300, height:300 if @image.present? %>
+  
+  <% if @quote.present? %>
+  <p style="font-weight: bold; font-style: italic;">「<%= @quote %>」</p>
+<% end %>
+
+  <div>
+    <%= link_to "入力画面に戻る", new_input_weight_path %>
+  </div>
+  
+</body>
+</html>
