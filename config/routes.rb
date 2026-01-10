@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+ # トップページ
+root "top_pages#home"
+
+# 体重入力フォーム
+resources :input_weights, only: [:new]
+
+# 比較判定処理（DB使わないのでモデル不要）
+post "comparison/judge", to: "comparison#judge", as: :comparison_judge
+
+  #resources :input_weights, :new, :create
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
